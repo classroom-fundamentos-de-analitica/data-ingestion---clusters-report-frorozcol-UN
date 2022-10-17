@@ -14,8 +14,13 @@ import pandas as pd
 
 def ingest_data():
 
-    #
-    # Inserte su código aquí
-    #
+    df = pd.read_fwf(
+        "clusters_report.txt",
+        widths=[7, 16, 16, 79],
+        header=[0],
+        skiprows=[1, 2, 3]
+    )
 
     return df
+if __name__ == "__main__":
+     ingest_data()
